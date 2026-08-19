@@ -15,6 +15,7 @@ To interface a PIR (Passive Infrared) motion sensor with Arduino UNO and control
 •	Computer with Arduino IDE 
 
 **Circuit Diagram:**
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/c9942b8e-facc-4a78-a070-ab9bebd5d361" />
 
 **Procedure**
 1.	Connect the PIR sensor to the Arduino UNO: VCC to 5V, OUT to D2, and GND to GND.
@@ -25,13 +26,38 @@ To interface a PIR (Passive Infrared) motion sensor with Arduino UNO and control
 6. Observe the LED and buzzer when movement is made in front of the PIR sensor.
 
 **Arduino IDE Code:**
+const int PIR_PIN = 2;
+const int BUZZER_PIN = 13;
 
+void setup() {
+  pinMode(PIR_PIN, INPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
+
+  Serial.begin(9600);
+}
+
+void loop() {
+  int motion = digitalRead(PIR_PIN);
+
+  if (motion == HIGH) {
+    digitalWrite(BUZZER_PIN, HIGH);
+    Serial.println("Motion Detected!");
+    delay(1000);
+  } 
+  else {
+    digitalWrite(BUZZER_PIN, LOW);
+    Serial.println("No Motion");
+  }
+
+  delay(1000);
+}
 
 
 **Working principle:** 
 The PIR sensor detects changes in infrared radiation caused by movement of a person or object. Its output becomes HIGH when motion is detected. Arduino UNO reads this signal through digital pin D2 and turns ON the LED and buzzer.
 
 **Output:**
+<img width="1600" height="850" alt="image" src="https://github.com/user-attachments/assets/33c8e75c-4d80-43e5-ba78-b3b34f3cae21" />
 
 
 
