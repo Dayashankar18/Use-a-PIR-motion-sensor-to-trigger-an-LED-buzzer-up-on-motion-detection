@@ -2,7 +2,7 @@
 **Exp3: Use a PIR motion sensor to trigger an LED/buzzer up on motion detection**
 
 **Aim**
-To interface a PIR (Passive Infrared) motion sensor with Arduino UNO and control an LED and buzzer when motion is detected.
+To interface a PIR (Passive Infrared) motion sensor with Arduino UNO and control an LED and buzzer when motion is detected
 **Components Required**
 •	Arduino UNO 
 •	PIR motion sensor (HC-SR501) 
